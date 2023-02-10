@@ -26,8 +26,8 @@ def display():
         y = nY
     
     #PROBLEM 
-    if (n % 2 == 0):
-        glRotate(step2 / 2, 0, 0, 1)
+    #if (n % 2 == 0):
+       # glRotate(step2 / 2, 0, 0, 1)
 
     glEnd()
     glFlush()
