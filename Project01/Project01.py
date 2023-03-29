@@ -11,9 +11,13 @@ from OpenGL.GLU import *
 
 def display():
     #User Inputs
-    d = int(input("Enter d value: "))
-    r = int(input("Enter r value: "))
-    bigR = int(input("Enter R value: "))
+    #d = int(input("Enter d value: "))
+    #r = int(input("Enter r value: "))
+    #bigR = int(input("Enter R value: "))
+    
+    d = 5
+    r = 3
+    bigR = 5
 
     #Starting points
     x = 0
@@ -21,28 +25,30 @@ def display():
 
     #Theta Calculation for drawing
     theta1 = 0.0
-    #theta2 = (math.lcm(r, R))
-    theta3 = (2*math.pi*(float((math.lcm(r, R)))/R))
+    #theta2 = (math.lcm(r, bigR))
+    theta3 = (2*math.pi*(float((math.lcm(r, bigR)))/bigR))
 
     #Calculate radians
     nD = d*(math.pi/180)
     nr = r*(math.pi/180)
     nR = bigR*(math.pi/180)
 
-    #Set the value calculated in radians as the variables
-    d = nD
-    r = nr
-    bigR = nR
-
     #Draw the line loop
     glBegin(GL_LINE_LOOP)
-
+    #Loop while theta1 is still less than theta3
     while (theta1 < theta3):
-        nX = 
-        nY = 
+        #Equations to get the x and y
+        nX = (nr - nR) * math.cos(theta1) + nD * math.cos(((nr - nR)) / (nR) * theta1)
+        nY = (nr - nR) * math.sin(theta1) + nD * math.sin(((nr - nR)) / (nR) * theta1)
         x = nX
         y = nY
 
+        #Draw the actual coordinates after setting the new coordinates.
+        glVertex2f(x,y)
+        theta1 * 0.5
+    #Finish drawing
+    glEnd()
+    glFlush()
 
 
 
