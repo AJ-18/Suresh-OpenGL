@@ -10,7 +10,8 @@ def display():
 
     height = 0
     y = height
-    n = int (input("Enter number of points: "))
+    #n = int (input("Enter number of points: "))
+    n = 16
 
     #RADIANS
     step = 6.28319/n
