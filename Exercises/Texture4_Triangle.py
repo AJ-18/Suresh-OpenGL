@@ -1,6 +1,6 @@
+from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
-from OpenGL.GL import *
 import sys
 from PIL import Image as Image
 import numpy
