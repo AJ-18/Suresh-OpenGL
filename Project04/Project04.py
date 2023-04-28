@@ -1,5 +1,6 @@
 #Arjun Suresh (AJ)
 #Project 4
+#Modified Curved_Surface.py
 
 
 from OpenGL.GL   import *
@@ -117,6 +118,16 @@ def main():
     glutInitWindowPosition(0, 0)
     glutInitWindowSize(1000, 1000)
     glutCreateWindow("Project 4 AJ")
+    
+    #Lighting 
+    glEnable(GL_LIGHTING)
+    lightZeroPosition = [10., 4., 10., 1.]
+    lightZeroColor = [0.8, 1.0, 0.8, 1.0]
+    glLightfv(GL_LIGHT0, GL_POSITION, lightZeroPosition)
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, lightZeroColor)
+    glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.1)
+    glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.05)
+    glEnable(GL_LIGHT0)
     glutDisplayFunc(display)
     init()
     glutMainLoop()
